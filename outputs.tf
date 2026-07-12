@@ -1,3 +1,7 @@
+output "stream_analytics_managed_private_endpoints_id" {
+  description = "Map of id values across all stream_analytics_managed_private_endpoints, keyed the same as var.stream_analytics_managed_private_endpoints"
+  value       = { for k, v in azurerm_stream_analytics_managed_private_endpoint.stream_analytics_managed_private_endpoints : k => v.id }
+}
 output "stream_analytics_managed_private_endpoints_name" {
   description = "Map of name values across all stream_analytics_managed_private_endpoints, keyed the same as var.stream_analytics_managed_private_endpoints"
   value       = { for k, v in azurerm_stream_analytics_managed_private_endpoint.stream_analytics_managed_private_endpoints : k => v.name }
